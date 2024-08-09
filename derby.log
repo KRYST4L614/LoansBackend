@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Aug 06 21:45:41 YAKT 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-0191-27b9-4cf2-000000db11e0 
+on database directory memory:/Users/macbookpro/Downloads/demo/b6ea58b1-a925-46ea-854d-2f16b06ae9a9 with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@43e45247 
+Loaded from file:/Users/macbookpro/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=22.0.2+9-70
+user.dir=/Users/macbookpro/Downloads/demo
+os.name=Mac OS X
+os.arch=x86_64
+os.version=12.7.2
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

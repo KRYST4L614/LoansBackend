@@ -24,7 +24,7 @@ public class LoanConditionsService {
                     .period(random.nextInt(3, 90)).build();
             loanConditionsRepository.save(loanConditions);
         } else {
-            loanConditions = loanConditionsRepository.findAll().getFirst();
+            loanConditions = loanConditionsRepository.findAll().get(0);
         }
         return loanConditions;
     }

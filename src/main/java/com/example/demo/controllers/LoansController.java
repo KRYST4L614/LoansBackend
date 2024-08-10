@@ -29,7 +29,7 @@ public class LoansController {
     @Autowired
     private LoanConditionsService loanConditionsService;
 
-    @PostMapping("/")
+    @PostMapping("/add")
     @Operation(description = "Add loan to user")
     public Loan add(@RequestBody AddLoanRequest loan) {
         return loansService.addLoan(userService.getCurrentUser(), loan);

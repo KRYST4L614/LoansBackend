@@ -26,6 +26,9 @@ public class Loan {
     @Column(name = "date")
     private Date date;
 
+    @Column(name = "issue_date")
+    private Date issueDate;
+
     @Column(name = "first_name")
     private String firstName;
 

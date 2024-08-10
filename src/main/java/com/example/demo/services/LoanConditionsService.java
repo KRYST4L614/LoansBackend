@@ -21,7 +21,7 @@ public class LoanConditionsService {
             loanConditions = LoanConditions.builder()
                     .percent(Math.round(random.nextDouble(3.0, 30.0) * 100) / 100.0)
                     .maxAmount(random.nextInt(5, 500) * 1000)
-                    .period(random.nextInt(5, 90)).build();
+                    .period(random.nextInt(10, 90)).build();
             loanConditionsRepository.save(loanConditions);
         } else {
             loanConditions = loanConditionsRepository.findAll().get(0);

@@ -32,7 +32,7 @@ public class LoansService {
         Random random = new Random();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(Date.from(Instant.now()));
-        calendar.add(Calendar.DATE, random.nextInt(2, loan.getPeriod()));
+        calendar.add(Calendar.DATE, random.nextInt(2, 5));
         Date issueDate = calendar.getTime();
         Loan newLoan = Loan.builder()
                 .amount(loan.getAmount())

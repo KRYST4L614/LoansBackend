@@ -1,4 +1,4 @@
-Backend часть приложения Loans. Документация: после запуска - http://localhost:8080/swagger-ui/index.html.
+Backend часть приложения [Loans](https://github.com/KRYST4L614/loans). Документация: после запуска - http://localhost:8080/swagger-ui/index.html.
 *********
 Функционал:
 - Присутствует JWT аутентификация. Есть возможность:

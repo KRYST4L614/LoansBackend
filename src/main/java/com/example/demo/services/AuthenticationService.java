@@ -53,7 +53,7 @@ public class AuthenticationService {
                 .loadUserByUsername(request.getUsername());
 
         var jwt = jwtService.generateToken(user);
-        return jwt;
+        return "Bearer " + jwt;
     }
 }
 

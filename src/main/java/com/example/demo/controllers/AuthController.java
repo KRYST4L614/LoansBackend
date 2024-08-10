@@ -7,6 +7,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,13 +23,21 @@ public class AuthController {
 
     @Operation(summary = "Authorize user")
     @PostMapping("/login")
-    public String login(@RequestBody @Valid LoginRequest request) {
-        return authenticationService.login(request);
+    public ResponseEntity<String> login(@RequestBody @Valid LoginRequest request) {
+        try {
+            return ResponseEntity.ok(authenticationService.login(request));
+        } catch (AuthenticationException e) {
+            return ResponseEntity.status(404).body("User not found");
+        }
     }
 
     @Operation(summary = "Registration user")
     @PostMapping("/registration")
-    public RegistrationResponse registration(@RequestBody @Valid LoginRequest request) {
-        return authenticationService.registration(request);
+    public ResponseEntity<RegistrationResponse> registration(@RequestBody @Valid LoginRequest request) {
+        try {
+            return ResponseEntity.ok(authenticationService.registration(request));
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(400).build();
+        }
     }
 }

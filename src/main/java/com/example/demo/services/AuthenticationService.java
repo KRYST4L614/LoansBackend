@@ -7,6 +7,7 @@ import com.example.demo.domain.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -40,9 +41,10 @@ public class AuthenticationService {
      * User authentication
      *
      * @param request user's data
+     * @throws AuthenticationException if auth is failed
      * @return token
      */
-    public String login(LoginRequest request) {
+    public String login(LoginRequest request) throws AuthenticationException {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 request.getUsername(),
                 request.getPassword()
